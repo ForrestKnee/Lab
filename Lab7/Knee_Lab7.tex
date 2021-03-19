@@ -1,0 +1,128 @@
+% Digital Logic Report Template
+% Created: 2020-01-10, John Miller
+
+%==========================================================
+%=========== Document Setup  ==============================
+
+% Formatting defined by class file
+\documentclass[11pt]{article}
+
+% ---- Document formatting ----
+\usepackage[margin=1in]{geometry}	% Narrower margins
+\usepackage{booktabs}				% Nice formatting of tables
+\usepackage{graphicx}				% Ability to include graphics
+
+%\setlength\parindent{0pt}	% Do not indent first line of paragraphs 
+\usepackage[parfill]{parskip}		% Line space b/w paragraphs
+%	parfill option prevents last line of pgrph from being fully justified
+
+% Parskip package adds too much space around titles, fix with this
+\RequirePackage{titlesec}
+\titlespacing\section{0pt}{8pt plus 4pt minus 2pt}{3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{4pt plus 4pt minus 2pt}{-2pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{2pt plus 4pt minus 2pt}{-6pt plus 2pt minus 2pt}
+
+% ---- Hyperlinks ----
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}	% For URL's. Automatically links internal references.
+
+% ---- Code listings ----
+\usepackage{listings} 					% Nice code layout and inclusion
+\usepackage[usenames,dvipsnames]{xcolor}	% Colors (needs to be defined before using colors)
+
+% Define custom colors for listings
+\definecolor{listinggray}{gray}{0.98}		% Listings background color
+\definecolor{rulegray}{gray}{0.7}			% Listings rule/frame color
+
+% Style for Verilog
+\lstdefinestyle{Verilog}{
+	language=Verilog,					% Verilog
+	backgroundcolor=\color{listinggray},	% light gray background
+	rulecolor=\color{blue}, 			% blue frame lines
+	frame=tb,							% lines above & below
+	linewidth=\columnwidth, 			% set line width
+	basicstyle=\small\ttfamily,	% basic font style that is used for the code	
+	breaklines=true, 					% allow breaking across columns/pages
+	tabsize=3,							% set tab size
+	commentstyle=\color{gray},	% comments in italic 
+	stringstyle=\upshape,				% strings are printed in normal font
+	showspaces=false,					% don't underscore spaces
+}
+
+% How to use: \Verilog[listing_options]{file}
+\newcommand{\Verilog}[2][]{%
+	\lstinputlisting[style=Verilog,#1]{#2}
+}
+
+
+
+
+%======================================================
+%=========== Body  ====================================
+\begin{document}
+
+\title{ELC 2137 Lab 7: BCD}
+\author{Forrest Knee}
+
+\maketitle
+
+
+\section*{Summary}
+
+In this lab I coded the seven segment display of the Basys 3 to output numbers in binary coded decimal from the switches input.
+
+
+\section*{Results}
+
+\centering
+
+\includegraphics[scale=.1,angle=270,trim={5cm 5cm 40cm 4cm},clip]{Lab7_Circuit}
+
+11-Bit Double Dabble Circuit 
+
+\includegraphics[scale=0.1,angle=270,trim={30cm 10cm 40cm 00cm},clip]{LabFirstDigit}
+
+First Digit of 98
+
+\includegraphics [scale=.1,angle=270,trim={24cm 00cm 47cm 5cm},clip]{LabSecondDigit}
+
+Second Digit of 98
+
+\includegraphics[scale=0.7]{LabAdd3_Sim_Waveform}
+
+Add 3 Waveform
+
+\includegraphics[scale=0.63]{Lab_BCD6_Sim_Waveform}
+
+BCD6 Waveform
+
+\includegraphics[scale=0.7]{Lab_BCD11_Waveform}
+
+BCD11 Waveform
+
+\includegraphics[scale=0.66]{LabSseg1_BCD_Sim_Waveform}
+
+SSEG BCD Decoder Waveform
+
+\pagebreak
+
+\section*{Code}
+
+\Verilog[caption = Add 3 Module]{add3.v}
+
+\Verilog[caption = Add 3 Test]{add3_SIM.sv}
+
+\Verilog[caption = BCD 6 Module]{bcd6.sv}
+
+\Verilog[caption = BCD 6 Test]{BCD6_SIM.sv}
+
+\Verilog[caption = BCD 11 Module]{bcd11.sv}
+
+\Verilog[caption = BCD 11 Test]{BCD11_SIM.sv}
+
+\Verilog[caption = Seven Segment Decoder to BCD]{sseg1_BCD.sv}
+
+\Verilog[caption = Decoder Test]{sseg1bcdSim.sv}
+
+
+
+\end{document}

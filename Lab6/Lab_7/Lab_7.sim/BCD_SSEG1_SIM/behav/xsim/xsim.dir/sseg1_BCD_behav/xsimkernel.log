@@ -1,0 +1,7 @@
+Running: xsim.dir/sseg1_BCD_behav/xsimk.exe -simmode gui -wdb sseg1_BCD_behav.wdb -simrunnum 0 -socket 52314
+Design successfully loaded
+Design Loading Memory Usage: 5804 KB (Peak: 5804 KB)
+Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 6440 KB (Peak: 6440 KB)
+Simulation CPU Usage: 78 ms

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Mar 14 20:51:15 2021
+# Process ID: 2196
+# Current directory: C:/Users/Forrest/Desktop/School/Digital logic/Lab/Lab6/Lab_7/Lab_7.sim/BCD_SSEG1_SIM/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/Forrest/Desktop/School/Digital logic/Lab/Lab6/Lab_7/Lab_7.sim/BCD_SSEG1_SIM/behav/xsim/xsim.dir/sseg1_BCD_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/Forrest/Desktop/School/Digital logic/Lab/Lab6/Lab_7/Lab_7.sim/BCD_SSEG1_SIM/behav/xsim/webtalk.log
+# Journal file: C:/Users/Forrest/Desktop/School/Digital logic/Lab/Lab6/Lab_7/Lab_7.sim/BCD_SSEG1_SIM/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/Forrest/Desktop/School/Digital -notrace
+couldn't read file "C:/Users/Forrest/Desktop/School/Digital": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Sun Mar 14 20:51:16 2021...

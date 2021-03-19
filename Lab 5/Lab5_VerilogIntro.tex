@@ -1,0 +1,122 @@
+% Digital Logic Report Template
+% Created: 2020-01-10, John Miller
+
+%==========================================================
+%=========== Document Setup  ==============================
+
+% Formatting defined by class file
+\documentclass[11pt]{article}
+
+% ---- Document formatting ----
+\usepackage[margin=1in]{geometry}	% Narrower margins
+\usepackage{booktabs}				% Nice formatting of tables
+\usepackage{graphicx}				% Ability to include graphics
+
+%\setlength\parindent{0pt}	% Do not indent first line of paragraphs 
+\usepackage[parfill]{parskip}		% Line space b/w paragraphs
+%	parfill option prevents last line of pgrph from being fully justified
+
+% Parskip package adds too much space around titles, fix with this
+\RequirePackage{titlesec}
+\titlespacing\section{0pt}{8pt plus 4pt minus 2pt}{3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{4pt plus 4pt minus 2pt}{-2pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{2pt plus 4pt minus 2pt}{-6pt plus 2pt minus 2pt}
+
+% ---- Hyperlinks ----
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}	% For URL's. Automatically links internal references.
+
+% ---- Code listings ----
+\usepackage{listings} 					% Nice code layout and inclusion
+\usepackage[usenames,dvipsnames]{xcolor}	% Colors (needs to be defined before using colors)
+
+% Define custom colors for listings
+\definecolor{listinggray}{gray}{0.98}		% Listings background color
+\definecolor{rulegray}{gray}{0.7}			% Listings rule/frame color
+
+% Style for Verilog
+\lstdefinestyle{Verilog}{
+	language=Verilog,					% Verilog
+	backgroundcolor=\color{listinggray},	% light gray background
+	rulecolor=\color{blue}, 			% blue frame lines
+	frame=tb,							% lines above & below
+	linewidth=\columnwidth, 			% set line width
+	basicstyle=\small\ttfamily,	% basic font style that is used for the code	
+	breaklines=true, 					% allow breaking across columns/pages
+	tabsize=3,							% set tab size
+	commentstyle=\color{gray},	% comments in italic 
+	stringstyle=\upshape,				% strings are printed in normal font
+	showspaces=false,					% don't underscore spaces
+}
+
+% How to use: \Verilog[listing_options]{file}
+\newcommand{\Verilog}[2][]{%
+	\lstinputlisting[style=Verilog,#1]{#2}
+}
+
+
+
+
+%======================================================
+%=========== Body  ====================================
+\begin{document}
+
+\title{ELC 2137 Lab 5: Intro to Verilog}
+\author{Forrest Knee}
+
+\maketitle
+
+
+\section*{Summary}
+
+This lab involved creating a half adder, full adder, and 2-bit adder/subtractor and simulating them in verilog.
+
+
+\section*{Q\&A}
+
+4. Do the simulations match the expected output values?
+
+	Yes, my simulations do perform as expected.
+
+5. What is one thing that you still don't understand about verilog?
+	
+	There are many many options that we were told to skip through and select certain settings when creating our project and file. I did not understand many of those choices.
+
+\section*{Results}
+\begin{figure}
+\includegraphics[scale=0.7,trim=15cm 16cm .5cm 4cm,clip]{haScreenShot}
+\caption{Half Adder}
+\end{figure}
+
+\begin{figure}
+\includegraphics[scale=0.2,trim=50cm 50cm 1cm 13cm,clip]{faScreenShot}
+\caption{Full Adder}
+\end{figure}
+
+\begin{figure}
+\includegraphics[scale=0.32,trim=32cm 30cm 0.5cm 7cm,clip]{AddSubbScreenShot}
+\caption{2 Bit Adder Subtractor}
+\end{figure}
+
+\begin{figure}
+\includegraphics[scale=0.5]{lab5_block}
+\end{figure}
+
+\clearpage
+
+
+\section*{Code}
+
+
+\Verilog[caption=Half Adder]{halfadder.v}
+
+\Verilog[caption=Half Adder Test]{halfadder_SIM.v}
+
+\Verilog[caption=Full Adder]{fulladder.v}
+
+\Verilog[caption=Full Adder Test]{fulladder_SIM.v}
+
+\Verilog[caption=2 Bit Adder Subtractor]{addersubtractor.v}
+
+\Verilog[caption=2 Bit Adder Subtractor Test]{addsub_SIM.v}
+
+\end{document}

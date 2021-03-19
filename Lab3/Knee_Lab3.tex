@@ -1,0 +1,115 @@
+% Digital Logic Report Template
+% Created: 2020-01-10, John Miller
+
+%==========================================================
+%=========== Document Setup  ==============================
+
+% Formatting defined by class file
+\documentclass[11pt]{article}
+
+% ---- Document formatting ----
+\usepackage[margin=1in]{geometry}	% Narrower margins
+\usepackage{booktabs}				% Nice formatting of tables
+\usepackage{graphicx}				% Ability to include graphics
+
+%\setlength\parindent{0pt}	% Do not indent first line of paragraphs 
+\usepackage[parfill]{parskip}		% Line space b/w paragraphs
+%	parfill option prevents last line of pgrph from being fully justified
+
+% Parskip package adds too much space around titles, fix with this
+\RequirePackage{titlesec}
+\titlespacing\section{0pt}{8pt plus 4pt minus 2pt}{3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{4pt plus 4pt minus 2pt}{-2pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{2pt plus 4pt minus 2pt}{-6pt plus 2pt minus 2pt}
+
+% ---- Hyperlinks ----
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}	% For URL's. Automatically links internal references.
+
+% ---- Code listings ----
+\usepackage{listings} 					% Nice code layout and inclusion
+\usepackage[usenames,dvipsnames]{xcolor}	% Colors (needs to be defined before using colors)
+
+% Define custom colors for listings
+\definecolor{listinggray}{gray}{0.98}		% Listings background color
+\definecolor{rulegray}{gray}{0.7}			% Listings rule/frame color
+
+% Style for Verilog
+\lstdefinestyle{Verilog}{
+	language=Verilog,					% Verilog
+	backgroundcolor=\color{listinggray},	% light gray background
+	rulecolor=\color{blue}, 			% blue frame lines
+	frame=tb,							% lines above & below
+	linewidth=\columnwidth, 			% set line width
+	basicstyle=\small\ttfamily,	% basic font style that is used for the code	
+	breaklines=true, 					% allow breaking across columns/pages
+	tabsize=3,							% set tab size
+	commentstyle=\color{gray},	% comments in italic 
+	stringstyle=\upshape,				% strings are printed in normal font
+	showspaces=false,					% don't underscore spaces
+}
+
+% How to use: \Verilog[listing_options]{file}
+\newcommand{\Verilog}[2][]{%
+	\lstinputlisting[style=Verilog,#1]{#2}
+}
+
+
+
+
+%======================================================
+%=========== Body  ====================================
+\begin{document}
+
+\title{ELC 2137 Lab 3: Adders}
+\author{Forrest Knee}
+
+\maketitle
+
+
+\section*{Summary}
+
+This lab involved the use of AND and XOR IC's to make adders. We were tasked with building a half, full, and eventually a 2 bit adder.
+
+
+\section*{Results}
+	\centering
+	\includegraphics[scale=0.4]{Knee_Dempage3}
+
+	Circuit Demonstration Page
+\begin{figure}\centering
+	\begin{minipage}{.5\textwidth}
+	\includegraphics[scale=0.08,angle=270]{Full_Adder}
+	\caption{Full Adder}
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+	\includegraphics[scale=0.08,angle=270]{2Bit_Adder}
+	\caption{2 Bit Adder}
+	\end{minipage}
+	\end{figure}
+
+\pagebreak
+
+\begin{tabular}{ccc|cccc|cc}
+
+	Cin & A & B & c1 & s1 & c2 & s2 & Cout & S \\
+	\midrule
+	 0 & 0 &  0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+	 0 & 0 &  1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+	 0 & 1 &  0 & 0 & 1 & 0 & 1 & 0 & 1 \\
+	 0 & 1 &  1 & 1 & 0 & 0 & 0 & 1 & 0 \\
+	 1 & 0 &  0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+	 1 & 0 &  1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+	 1 & 1 &  0 & 0 & 1 & 1 & 0 & 1 & 0 \\
+    	 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 \\
+	\bottomrule
+
+\end{tabular}
+
+If both carries were high at the same time, the result would be larger than three which is not possible.
+
+\section*{Q\&A}
+
+4. We can use an OR and an XOR gate to add the carries, an XOR would be doing an OR operation but because either one or the other will be on and never both, either works.
+
+
+\end{document}

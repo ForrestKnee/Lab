@@ -1,0 +1,110 @@
+% Digital Logic Report Template
+% Created: 2020-01-10, John Miller
+
+%==========================================================
+%=========== Document Setup  ==============================
+
+% Formatting defined by class file
+\documentclass[11pt]{article}
+
+% ---- Document formatting ----
+\usepackage[margin=1in]{geometry}	% Narrower margins
+\usepackage{booktabs}				% Nice formatting of tables
+\usepackage{graphicx}				% Ability to include graphics
+
+%\setlength\parindent{0pt}	% Do not indent first line of paragraphs 
+\usepackage[parfill]{parskip}		% Line space b/w paragraphs
+%	parfill option prevents last line of pgrph from being fully justified
+
+% Parskip package adds too much space around titles, fix with this
+\RequirePackage{titlesec}
+\titlespacing\section{0pt}{8pt plus 4pt minus 2pt}{3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{4pt plus 4pt minus 2pt}{-2pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{2pt plus 4pt minus 2pt}{-6pt plus 2pt minus 2pt}
+
+% ---- Hyperlinks ----
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}	% For URL's. Automatically links internal references.
+
+% ---- Code listings ----
+\usepackage{listings} 					% Nice code layout and inclusion
+\usepackage[usenames,dvipsnames]{xcolor}	% Colors (needs to be defined before using colors)
+
+% Define custom colors for listings
+\definecolor{listinggray}{gray}{0.98}		% Listings background color
+\definecolor{rulegray}{gray}{0.7}			% Listings rule/frame color
+
+% Style for Verilog
+\lstdefinestyle{Verilog}{
+	language=Verilog,					% Verilog
+	backgroundcolor=\color{listinggray},	% light gray background
+	rulecolor=\color{blue}, 			% blue frame lines
+	frame=tb,							% lines above & below
+	linewidth=\columnwidth, 			% set line width
+	basicstyle=\small\ttfamily,	% basic font style that is used for the code	
+	breaklines=true, 					% allow breaking across columns/pages
+	tabsize=3,							% set tab size
+	commentstyle=\color{gray},	% comments in italic 
+	stringstyle=\upshape,				% strings are printed in normal font
+	showspaces=false,					% don't underscore spaces
+}
+
+% How to use: \Verilog[listing_options]{file}
+\newcommand{\Verilog}[2][]{%
+	\lstinputlisting[style=Verilog,#1]{#2}
+}
+
+
+
+
+%======================================================
+%=========== Body  ====================================
+\begin{document}
+
+\title{ELC 2137 Lab 6: 7 Segment Display}
+\author{Forrest Knee}
+
+\maketitle
+
+
+\section*{Summary}
+
+This lab involved programing a mux, a binary to seven segment display decoder, and a file to merge the mux and decoder. This file programs the basys3 board to convert the switches positions in binary to hexidecmial. 
+
+
+\section*{Q\&A}
+
+3. List the errors you found during simulation. What does this tell you about why we run simulations?
+
+I had made an error in my sseg decoder where my "F" and "E" had switched codes which I found through simulation. This shows me how simulations tell of minor errors in code that can be easily identified through testing in an ideal environment.
+
+4. How many wires are connected to the 7-segment display? If the segments were not all connected together, how many wires would there have to be? Why do we prefer the current method vs. separating all of the segments?
+
+	There are 12 wires connected to the seven segment display. If the segments were not all connected together, there would be 72 wires connecting each positive and negative end of each display. The current method of using a common anode and multiplexer simplifies the construction of the display without sacraficing functionality. 
+
+
+\section*{Results}
+
+\centering
+\includegraphics[scale=0.12]{Basys3_First}
+
+
+\includegraphics[scale=0.12]{Basys3_Second}
+
+\pagebreak
+
+\section*{Code}
+
+\Verilog[caption = Mux Source Code]{mux2_4b.sv}
+
+\Verilog[caption = Seven Segment Decoder]{sseg_decoder.v}
+
+\Verilog[caption = Seven Segment and Mux Merger]{sseg1.sv}
+
+\Verilog[caption = Mux Simulation]{mux_SIM.v}
+
+\Verilog[caption = Seven Segment Decoder Simulation]{sseg_SIM.v}
+
+\Verilog[caption = Merge Code Simulation]{sseg1_SIM.v}
+
+
+\end{document}

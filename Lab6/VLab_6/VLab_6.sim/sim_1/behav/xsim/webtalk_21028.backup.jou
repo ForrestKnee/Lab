@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Mar  3 15:40:14 2021
+# Process ID: 21028
+# Current directory: C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab6/VLab_6/VLab_6.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab6/VLab_6/VLab_6.sim/sim_1/behav/xsim/xsim.dir/mux2_4b_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab6/VLab_6/VLab_6.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab6/VLab_6/VLab_6.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/Forrest/Desktop/School/Digital -notrace

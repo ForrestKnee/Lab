@@ -1,0 +1,10 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab 5/project_1/project_1.sim/sim_3/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
+C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab 5/project_1/project_1.srcs/sim_3/new/addersubtractor_SIM.v,1614794073,verilog,,,,addersubtractor_SIM,,,,,,,,
+C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab 5/project_1/project_1.srcs/sim_3/new/addsub_SIM.v,1614796821,verilog,,,,addsub_SIM,,,,,,,,
+C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab 5/project_1/project_1.srcs/sources_1/new/addersubtractor.v,1614797104,verilog,,C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab 5/project_1/project_1.srcs/sources_1/new/fulladder.v,,addersubtractor,,,,,,,,
+C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab 5/project_1/project_1.srcs/sources_1/new/fulladder.v,1614788740,verilog,,C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab 5/project_1/project_1.srcs/sources_1/new/halfadder.v,,fulladder,,,,,,,,
+C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab 5/project_1/project_1.srcs/sources_1/new/halfadder.v,1614787511,verilog,,C:/Users/Forrest/Desktop/School/Digital logic/LAb/Lab 5/project_1/project_1.srcs/sim_3/new/addsub_SIM.v,,halfadder,,,,,,,,
